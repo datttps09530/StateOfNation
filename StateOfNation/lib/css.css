@@ -1,0 +1,238 @@
+﻿.nav-pills .nav-link {
+    color: #555555 !important;
+}
+
+.nav-header {
+    color: black !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+.info-box-number {
+    font-size: 30px;
+}
+
+.m-0 {
+    font-weight: bold;
+}
+
+.title {
+    font-weight: bold;
+    padding: 10px 20px;
+    padding: 30px 0px 0px 10px;
+}
+
+.downPercent {
+    font-size: 15px;
+    margin-left: 10%;
+    color: #BD2025;
+    font-weight: normal;
+}
+
+.upPercent {
+    font-size: 15px;
+    margin-left: 10%;
+    color: #1BA332;
+    font-weight: normal;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+    background-color: #fff;
+    color: #00549A !important;
+    border-left: #00549A solid;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.bootstrap-switch-animate {
+    border-radius: 15px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+}
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 8px;
+        bottom: 2px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #00549A;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+.today {
+    border-radius: 0px;
+    background-color: #EEEEEE;
+    border-color: #555555;
+    font-weight: bold;
+    color: black;
+}
+
+.yes {
+    margin-left: 7px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.no {
+    margin-left: 32px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label:after {
+    content: "\2713";
+    font-family: universe-admin;
+    font-size: 13px;
+    line-height: 13px;
+    color: white;
+    font-weight: 700;
+    position: absolute;
+    top: calc(50% - 7px);
+    left: 3px;
+    height: auto;
+    background-image: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    border: 1px solid #00549A;
+    border-radius: 4px;
+    background-color: #00549A;
+}
+
+.custom-checkbox .custom-control-label {
+    padding-top: 1px;
+}
+
+.filter-item-font {
+    color: #003778;
+    font-family: Arial !important;
+    font-size: 12px !important;
+    letter-spacing: -0.15px;
+    line-height: 14px;
+    font-weight: normal !important;
+}
+
+.overview {
+    font-weight: 700;
+    font-size: 14px;
+    font-family: 'Arial';
+    font-style: normal;
+    line-height: 20px;
+    display: flex;
+    letter-spacing: -0.18px;
+    align-items: center;
+}
+
+.overview_normal {
+    font-size: 14px;
+    font-family: 'Arial';
+    font-style: normal;
+    line-height: 20px;
+    display: flex;
+    letter-spacing: -0.18px;
+    align-items: center;
+}
+
+.filter {
+}
+
+.quebecDiv {
+    border-radius: 24px;
+    background-color: rgb(85 85 85 / 10%);
+    border-color: #555555;
+    width: 59px;
+    font-family: 'Arial';
+    height: 22px;
+    line-height: 12px;
+    font-size: 12px;
+}
+
+.quebecAuto {
+    border-radius: 24px;
+    background-color: rgb(85 85 85 / 10%);
+    border-color: #555555;
+    font-family: 'Arial';
+    height: 22px;
+    line-height: 12px;
+    font-size: 12px;
+}
+
+.quebec {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    height: 14px;
+    width: 43px;
+    font-size: 12px;
+    color: #555555;
+    left: 8px;
+    top: 4px;
+}
+.Applied {
+    font-family: 'Arial';
+    font-style: normal;
+    font-size: 12px;
+}
+.trend {
+    font-family: 'Arial';
+    font-style: normal;
+    width: 79px;
+    height: 28px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #000000;
+}

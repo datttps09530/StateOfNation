@@ -1,0 +1,182 @@
+﻿@{
+    ViewBag.Title = "SLA Page";
+}
+<!-- Navbar -->
+<nav class="main-header navbar navbar-white navbar-light " style="background: #fff; z-index: 9999; box-shadow: 1px 3px 1px #aaa;">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="title">SLA</h2>
+            </div>
+            <div class="col-md-4">
+                <p>
+                    View:
+                    <a href="#" id="txtToday" class="btn btn-sm btn-default today" style="margin-right: -4px; border-radius: 0px; border-color: #555555" onclick="clickView('1')">
+                        <span>Today</span>
+                    </a>
+                    <a href="#" id="txtMinus" class="btn btn-sm btn-default" style="border-radius: 0px; border-color: #555555 " onclick="clickView('2')">
+                        <span>Last 15 minutes</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <p style="padding-left: 10px; margin-bottom: 0px; font-size: 11px">Last updated</p>
+        <p style="padding-left:10px;font-size:11px">November 1, 2020 at 10:00 AM (00:00:10)</p>
+        <p style="padding-left:10px">
+            Applied filters:
+            <a href="#" class="btn btn-sm btn-default" style="border-radius: 15px; background-color: #EEEEEE; border-color: #555555 ">
+                <span id="txtTitle"></span>
+            </a>
+            <a href="#" id="divAuto" class="btn btn-sm btn-default" style="border-radius: 15px; background-color: #EEEEEE; border-color: #555555 ">
+                <span id="txtTitleAuto"></span>
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- /.navbar -->
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="z-index:9999">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link" style="background: #00549A;">
+        <div class="row" style="height:29px;">
+            <div class="col-sm-4">
+                <img src="~/lib/Bell_logo.svg" alt="AdminLTE Logo" class="brand-image elevation-3">
+            </div>
+            <div class="col-sm-8">
+                <span class="brand-text font-weight-light" style="color:#fff">
+                    <span>Dashboard</span>
+                </span>
+            </div>
+        </div>
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar" style="background: #F4F4F4">
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">METRICS</li>
+                <li class="nav-item"> <a href="/Home/Index" class="nav-link "> Overview</a> </li>
+                <li class="nav-item"> <a href="/Home/SlaPage" class="nav-link active" style="font-weight:bold"> SLA</a> </li>
+                <li class="nav-item"> <a href="#" class="nav-link"> Buzz Requests</a> </li>
+                <li class="nav-item"> <a href="#" class="nav-link"> Calss</a> </li>
+                <li style="border-bottom: 1px solid #dadada;margin-top:30px"></li>
+                <li class="nav-header" style="font-weight:bold">Filters</li>
+                <li class="nav-item"> <a href="#" class="nav-link"> Region</a> </li>
+                <li class="nav-item">
+                    <select class="form-control" onchange="changeSelect()" id="txtSelect">
+                        <option value="1">Quebec</option>
+                        <option value="2">Ontario</option>
+                    </select>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        View real-time data <label class="switch">
+                            <input type="checkbox" checked onchange="changeYes()" name="txtYesOrNo">
+                            <span class="slider round"><sapn id="txtYes">Yes</sapn></span>
+                        </label>
+                    </a>
+                </li>
+                <li style="border-bottom: 1px solid #dadada;margin-top:30px"></li>
+                <li class="nav-header" style="font-weight:bold">Report</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" style="color: #00549A !important;">
+                        <i class="fa fa-download"></i>
+                        <p>
+                            Export Report
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <section class="content">
+        <div class="container-fluid">
+            <br />
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="info-box">
+                        <div class="info-box-content">
+                            <span class="info-box-text" style="text-align: center; font-weight: bold; color: #4C4C4C;font-size: 20px">Answer Time</span>
+                            <span class="info-box-text" style="text-align:center;font-weight:bold;font-size:25px">00:01:00</span>
+                            <span class="info-box-text" style="text-align: center; color: #555555;">Average</span>
+                            <span class="info-box-text" style="text-align: center; font-weight: bold; font-size: 25px">00:10:05</span>
+                            <span class="info-box-text" style="text-align: center; color: #555555;">Maximum</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="info-box">
+                        <div class="info-box-content">
+                            <span class="info-box-text" style="text-align: center; font-weight: bold; color: #4C4C4C; font-size: 20px">Process Time</span>
+                            <span class="info-box-text" style="text-align:center;font-weight:bold;font-size:25px">00:17:39</span>
+                            <span class="info-box-text" style="text-align: center; color: #555555;">Average</span>
+                            <span class="info-box-text" style="text-align: center; font-weight: bold; font-size: 25px">&nbsp;</span>
+                            <span class="info-box-text" style="text-align:center;">&nbsp;</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="info-box">
+                        <div class="info-box-content">
+                            <span class="info-box-text" style="text-align: center; font-weight: bold; color: #4C4C4C; font-size: 20px">Requests</span>
+                            <span class="info-box-text" style="text-align: center; font-weight: bold; font-size: 25px; color: #00549A; text-decoration: underline; ">106 <img style="width:12px" src="~/lib/icon.JPG" /></span>
+                            <span class="info-box-text" style="text-align:center;">Total</span>
+                            <span class="info-box-text">
+                                <span class="row">
+                                    <span class="col-sm-6" style="text-align:center">
+                                        <span style="font-weight: bold; font-size: 25px">96</span>
+                                        <!-- /.description-block -->
+                                    </span>
+                                    <!-- /.col -->
+                                    <span class="col-sm-6" style="text-align:center">
+                                        <span style=" font-weight: bold; font-size: 25px">7</span>
+                                        <!-- /.description-block -->
+                                    </span>
+                                </span>
+                            </span>
+                            <span class="info-box-text">
+                                <span class="row">
+                                    <span class="col-sm-6" style="text-align:center">
+                                        <span style=" color: #555555;">in Time</span>
+                                        <!-- /.description-block -->
+                                    </span>
+                                    <!-- /.col -->
+                                    <span class="col-sm-6" style="text-align:center">
+                                        <span style=" color: #555555;">Pending</span>
+                                        <!-- /.description-block -->
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <!-- <div class="col-sm-6">
+                            <div id="myDiv_pie" style="height: 300px; width: 100%;"></div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div id="myDiv" style="height: 300px; width: 100%;"></div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+</div>

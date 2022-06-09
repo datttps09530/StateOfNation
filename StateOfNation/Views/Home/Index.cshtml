@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <span class="trend">Trends</span>
+                                </div><!-- /.col -->
+                            </div><!-- /.row -->
+                        </div><!-- /.container-fluid -->
+                    </div>
+                    <input type="checkbox" name="my-checkbox" checked> SLA - Buzz
+                    <input type="checkbox" name="my-checkbox" checked style="margin-left:15px"> SLA - Calls
+                    <input type="checkbox" name="my-checkbox" checked style="margin-left:15px"> Overall SLA
+                    <input type="checkbox" name="my-checkbox" checked style="margin-left:15px"> Volumn
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div id="chartContainer_v2" style="height: 300px; width: 100%;"></div>
+                            <span id="timeToRender"></span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div id="chartContainer_atlantic" style="height: 300px; width: 100%;"></div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div id="chartContainer_overall" style="height: 300px; width: 100%;"></div>
+                            <span id="timeToRender"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <span class="trend">Statistics</span>
+                                </div><!-- /.col -->
+                            </div><!-- /.row -->
+                        </div><!-- /.container-fluid -->
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-12">
+                        <div class="info-box">
+                            <div class="info-box-content">
+                                <span class="info-box-text">Pending Buzz requests</span>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span><span class="info-box-number">10<span class="downPercent">-6% <i style="transform: rotate(-45deg);" class="fa fa-arrow-down"></i></span><sapn></sapn></span> </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="chartContainer_v3" style="height: 50px; width: 100%;"></div>
+                                    </div>
+                                </div>
+                                <span class="progress-description" style="font-size: 12px;">
+                                    Locked: 8  | Unlocked: 2
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-12">
+                        <div class="info-box">
+                            <div class="info-box-content">
+                                <span class="info-box-text">Calls waiting</span>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span><span class="info-box-number">40<span class="upPercent">+6% <i style="transform: rotate(45deg);" class="fa fa-arrow-up"></i></span></span> </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="chartContainer_v4" style="height: 50px; width: 100%;"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+</div>

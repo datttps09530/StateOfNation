@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "AgentStatus";
+}
+
+<h2>AgentStatus Details</h2>
+
+@Html.Hidden("Get", Url.Action("Get", "AgentStatus"))
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Agent</th>
+            <th>Region</th>
+            <th>Available Since</th>
+            <th>Processing Since</th>
+            <th>Not Ready Since</th>
+            <th>First Logged In</th>
+            <th>Last Logged Out</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody id="tblInfo">
+    </tbody>
+</table>

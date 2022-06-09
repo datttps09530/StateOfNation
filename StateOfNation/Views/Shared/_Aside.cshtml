@@ -1,0 +1,77 @@
+@{
+    ViewBag.Title = "aside";
+}
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="z-index:9999">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link" style="background: #00549A;">
+        <div class="row" style="height:29px;">
+            <div class="col-sm-4">
+                <img src="~/lib/Bell_logo.svg" alt="AdminLTE Logo" class="brand-image elevation-3">
+            </div>
+            <div class="col-sm-8">
+                <span class="brand-text font-weight-light" style="color:#fff">
+                    <span>Dashboard</span>
+                </span>
+            </div>
+        </div>
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar" style="background: #F4F4F4; position: absolute;">
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">METRICS</li>
+                <li class="nav-item"> <a href="/Home/Index" class="nav-link active overview"> Overview</a> </li>
+                <li class="nav-item"> <a href="/Home/index" class="nav-link overview_normal"> SLA</a> </li>
+                <li class="nav-item"> <a href="/Home/AgentsStatus" class="nav-link overview_normal"> Agents Status</a> </li>
+                <li class="nav-item"> <a href="#" class="nav-link overview_normal"> Calls</a> </li>
+                <li style="border-bottom: 1px solid #dadada;margin-top:30px"></li>
+                <li class="nav-header" style="font-weight:bold">Filters</li>
+                <li class="nav-item"> <a href="#" class="nav-link overview_normal"> Region</a> </li>
+                <li class="nav-item">
+                    <select class="form-control" onchange="changeSelect()" id="txtSelect">
+                        <option value="1">Quebec</option>
+                        <option value="2">Ontario</option>
+                        <option value="3">Atlantic</option>
+                    </select>
+                </li>
+                <li class="nav-item"> <a href="#" class="nav-link overview_normal">Processes since</a> </li>
+                <li class="nav-item">
+                    <select class="form-control" onchange="changeSelect()" id="txtSelect">
+                        <option value="1">5 min</option>
+                        <option value="2">7 min</option>
+                        <option value="3">10 min</option>
+                    </select>
+                </li>
+                <li class="nav-item"> <a href="#" class="nav-link overview_normal">Status</a> </li>
+                <li class="nav-item">
+                    <select class="form-control" onchange="changeSelect()" id="txtSelect">
+                        <option value="1">Available</option>
+                        <option value="2">Not Ready</option>
+                    </select>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link overview_normal">
+                        View real-time data <label class="switch">
+                            <input type="checkbox" checked onchange="changeYes()" name="txtYesOrNo">
+                            <span class="slider round"><sapn id="txtYes">Yes</sapn></span>
+                        </label>
+                    </a>
+                </li>
+                <li style="border-bottom: 1px solid #dadada;margin-top:30px"></li>
+                <li class="nav-header" style="font-weight:bold">Report</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" style="color: #00549A !important;">
+                        <i class="fa fa-download"></i>
+                        <p>
+                            Export Report
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>
