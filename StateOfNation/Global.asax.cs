@@ -21,12 +21,12 @@ namespace StateOfNation
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            SqlDependency.Start(ConfigurationManager.ConnectionStrings["AgentStatusConnection"].ConnectionString);
+            SqlDependency.Start(ConfigurationManager.ConnectionStrings["StateOfNationConnection"].ConnectionString);
         }
 
         protected void Application_End()
         {
-            SqlDependency.Stop(ConfigurationManager.ConnectionStrings["AgentStatusConnection"].ConnectionString);
+            SqlDependency.Stop(ConfigurationManager.ConnectionStrings["StateOfNationConnection"].ConnectionString);
         }
     }
 }

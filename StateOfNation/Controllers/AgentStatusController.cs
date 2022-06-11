@@ -1,29 +1,40 @@
 ﻿using StateOfNation.Connection;
-using StateOfNation.Hubs;
-using StateOfNation.Models;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
+using StateOfNation.Requests;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace StateOfNation.Controllers
 {
     public class AgentStatusController : Controller
     {
-        public ActionResult AgentStatus()
+        private readonly ConnectionSQL connection;
+        public AgentStatusController(ConnectionSQL connection)
+        {
+            this.connection = connection;
+        }
+        public ActionResult View()
         {
             return View();
         }
-
-        public JsonResult GetDataTable()
+        [HttpGet]
+        public async Task<ActionResult> getListAgentStatusAsync(FilterAgentStatusRequest request, PagingParameter pagingparametermodel, bool isRealTime)
         {
-            ConnectionSQL getAgentStatus = new ConnectionSQL();
-            var getlistAgStus = getAgentStatus.GetAgentStatus();
-            return Json(new { listAgStus = getlistAgStus }, JsonRequestBehavior.AllowGet);
+            if(isRealTime)
+            {
+                var getListAgentDe = await connection.getAgentStatusDepedencyUpdated(request, pagingparametermodel);
+                var responseR = new
+                {
+                    data = getListAgentDe
+                };
+                return Json(responseR, JsonRequestBehavior.AllowGet);
+
+            }
+            var getListAgentStatus = connection.getListAgentStatus(request, pagingparametermodel);
+            var response = new
+            {
+                data = getListAgentStatus,
+            };
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
     }
 }
